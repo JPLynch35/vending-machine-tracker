@@ -1,11 +1,13 @@
 <h1><%=@snack.name%></h1>
-<h4>Price: $<%=@snack.price%></h4>
+<h4>Price: $<%=@snack.price / 100.0%></h4>
 
 <h4>Locations with snack:</h4>
 <ul>
   <% @snack.machines.each do |machine| %>
     <li><%= machine.location%></li>
-      <ul>
-        
-      
-      </ul>
+    <ul>
+      <li>Average Snack Price: $<%=machine.average_price%></li>
+      <li>Number of Snacks: <%=machine.snacks.count%></li>
+    </ul>
+  <% end %>
+</ul>

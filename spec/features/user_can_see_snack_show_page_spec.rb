@@ -14,14 +14,14 @@ feature 'When a user visits a snack show page' do
     snack7 = dons2.snacks.create(name: 'Gum', price: 120)
 
     visit snack_path(snack1)
-
+    
     expect(page).to have_content(snack1.name)
     expect(page).to have_content("Price: $#{snack1.price}")
     expect(page).to have_content("#{dons1.location}")
     expect(page).to have_content("Average Snack Price: $1.67")
-    expect(page).to have_content("Number of Snack: #{dons1.snacks.count}")
+    expect(page).to have_content("Number of Snacks: #{dons1.snacks.count}")
     expect(page).to have_content("#{dons2.location}")
     expect(page).to have_content("Average Snack Price: $1.67")
-    expect(page).to have_content("Number of Snack: #{dons2.snacks.count}")
+    expect(page).to have_content("Number of Snacks: #{dons2.snacks.count}")
   end
 end
