@@ -1,4 +1,5 @@
 class MachinesController < ApplicationController
+  has_many :snacks
   def index
     @owner = Owner.find(params[:owner_id])
   end
