@@ -5,6 +5,6 @@ class MachinesController < ApplicationController
 
   def show
     @machine = Machine.includes(:snacks).find(params[:id])
-    @average_price = (@machine.snacks.average(:price)/100).round(2)
+    @average_price = @machine.average_price
   end
 end
